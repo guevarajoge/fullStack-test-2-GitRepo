@@ -1,0 +1,6 @@
+{
+    "host": "172.20.0.54:27017",
+    "user": "MongoDBWeb2045",
+    "password": "85723196",
+    "dbname":"MongoDBWeb2045"
+}
