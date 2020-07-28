@@ -1,7 +1,3 @@
-const {
-    response
-} = require("express");
-
 const update = document.querySelector('#update-button');
 const deleteButton = document.querySelector('#delete-button');
 const messageDiv = document.querySelector('#message');
@@ -34,7 +30,7 @@ deleteButton.addEventListener('click', _ => {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                name: 'Dark Vader'
+                name: 'Dark Vadar'
             })
         })
         .then(res => {
