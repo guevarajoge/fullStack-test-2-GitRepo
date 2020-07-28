@@ -1,3 +1,7 @@
+const {
+    response
+} = require("express");
+
 const update = document.querySelector('#update-button');
 const deleteButton = document.querySelector('#delete-button');
 const messageDiv = document.querySelector('#message');
@@ -36,7 +40,12 @@ deleteButton.addEventListener('click', _ => {
         .then(res => {
             if (res.ok) return res.json()
         })
-        .then(data => {
-            window.location.reload()
+        .then(response => {
+            if (response === 'No quote delete') {
+                messageDiv.textContent = 'No Dark Vadar quote to delete'
+            } else {
+                window.location.reload()
+            }
         })
+        .catch()
 })
