@@ -80,5 +80,18 @@ MongoClient.connect(url, {
         })
         .catch(error => console.error(error))
     })
+
+    app.delete('/quotes', (req, res) => {
+      quotesCollection.remove({
+            name: 'Dark Vadar' // hard coded
+          },
+          'options'
+        )
+        .then(result => {})
+        .catch(error => console.error(error))
+    })
+
+
+
   })
   .catch(error => console.error(error))
