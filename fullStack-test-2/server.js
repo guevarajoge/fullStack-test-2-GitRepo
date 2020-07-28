@@ -82,12 +82,15 @@ MongoClient.connect(url, {
     })
 
     app.delete('/quotes', (req, res) => {
-      quotesCollection.remove({
-            name: 'Dark Vadar' // hard coded
-          },
-          'options'
-        )
-        .then(result => {})
+      quotesCollection.deleteOne({ // apropiate method to delete just one
+          name: req.body.name
+        })
+        .then(result => {
+          if (result.deletedCount === 0) {
+            return res.json('No quote to delete')
+          }
+          res.json(`Deleted Dark Vadar's quote`)
+        })
         .catch(error => console.error(error))
     })
 

@@ -1,5 +1,6 @@
 const update = document.querySelector('#update-button');
 const deleteButton = document.querySelector('#delete-button');
+const messageDiv = document.querySelector('#message');
 
 
 update.addEventListener('click', _ => {
